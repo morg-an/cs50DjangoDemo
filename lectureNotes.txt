@@ -1,0 +1,19 @@
+Lecture Source: CS50W Lecture 3 https://www.youtube.com/watch?v=w8q0C-C1js4
+
+New App:
+python3 manage.py startApp [name]
+
+Run Server:
+python3 manage.py runserver
+
+New App Checklist:
+1. Add to installed_apps under settings.py
+2. Add path to urls.py to include new urls file
+3. create new urls file
+    from django.urls import path
+    from . import views
+    urlpatterns = [
+        path("", views.index, name="index")
+    ]
+4. Add index.html file in templates/[name] folder
+5. Write the index function in views.py

@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Is it my Birthday?</title>
+    <link href="{% static 'isitmybirthday/styles.css' %}" rel="stylesheet">
+</head>
+<body>
+    {% if birthday %}
+        <h1>YES</h1>
+        <h2>(Happy Birthday)</h2>
+    {% else %}
+        <h1>NO</h1>
+        <h2>(Maybe Tomorrow)</h2>
+    {% endif %}
+    <a href="{% url 'birthday:index' %}">Enter Another Date</a>
+</body>
+</html>
