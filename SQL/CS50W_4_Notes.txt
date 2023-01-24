@@ -52,3 +52,18 @@ Strategy to solve: Lock database while in-progress
 (1) Create the models
 (2) Perform migration to map models onto database
     python3 manage.py makemigrations
+    python3 manage.py migrate
+(3) python3 manage.py shell
+    from wingCo.models import Flight
+    f = Flight(origin="New York", destination="London", duration=415)
+    f.save()
+    Flight.objects.all()    <-- equivalent of SELECT * FROM flights, returns QuerySet
+(4) To get models to return a string, add method in models.py:
+    
+    def __str__(self):
+        return f"{self.id}: {self.origin} to {self.destination}"
+
+Table Names: 
+wingCo_airport            
+wingCo_flight          
+wingCo_passenger 
