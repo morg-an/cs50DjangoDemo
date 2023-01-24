@@ -1,0 +1,51 @@
+https://www.youtube.com/watch?v=YzP164YANAU
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~SQL~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+CREATE TABLE table_name (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TYPE CONSTRAINTS
+);
+
+CONSTRAINTS include PRIMARY KEY; NOT NULL; DEFAULT; UNIQUE; AUTOINCREMENT; CHECK
+
+----------------
+INSERT INTO table
+    (columnName1, columnName2, columnName3)
+    VALUES ("value1", "value2", value3)
+
+----------------
+SELECT * FROM table;
+
+SELECT columnName1, columnName2 FROM table;
+
+SELECT * FROM table WHERE columnName1 = value;
+
+----------------
+Other Clauses: 
+LIMIT, ORDER BY, GROUP BY, HAVING
+
+----------------
+JOINs
+
+SELECT firstName, origin, destination FROM flights 
+JOIN passengers ON passengers.flight_id = flights.id
+
+Types of Joins:
+    Join/Inner Join
+    Left Outer Join
+    Right Outer Join
+    Full Outer Join
+
+-----------------
+SQL Injection Attack
+SELECT * FROM users
+WHERE username = "hacker"--" AND password = "";
+Strategies to prevent- 
+(1) escape the characters (treat the " and - as characters, not sql syntax)
+(2) use abstraction (e.g., in Django) as to not have to write sql queries at all
+
+-----------------
+Race Conditions
+Watch out for things happening in parallel threads. 
+Strategy to solve: Lock database while in-progress
+
+~~~~~~~~~~~~~~~~~~~~~~~DJANGO MODELS~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
