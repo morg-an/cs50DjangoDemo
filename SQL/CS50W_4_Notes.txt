@@ -49,3 +49,6 @@ Watch out for things happening in parallel threads.
 Strategy to solve: Lock database while in-progress
 
 ~~~~~~~~~~~~~~~~~~~~~~~DJANGO MODELS~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+(1) Create the models
+(2) Perform migration to map models onto database
+    python3 manage.py makemigrations
