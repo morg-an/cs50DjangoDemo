@@ -70,3 +70,24 @@ wingCo_passenger
 
 
 last viewed: 1:04:45 of Lecture 4 (1/23/23) - https://www.youtube.com/watch?v=YzP164YANAU
+
+~~~~~~~~~~~~~~~~~~~ADMIN~~~~~~~~~~~~~~~~~~~~~~
+step 1: in the urls, there should be default for admin
+    if not:
+        from django.contrib import admin
+
+        urlpatterns =[
+            path('admin/', admin.site.urls),
+            ...
+        ]
+
+step 2: create admin account in django application
+    python3 manage.py createsuperuser
+    username: m***** pw: B*****!*
+
+step 3: edit admin.py to import objects, then
+    admin.site.register(Object)
+
+step 4: to get to the admin app:
+    python3 manage.py runserver
+    
