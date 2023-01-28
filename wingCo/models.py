@@ -9,7 +9,7 @@ class Airport(models.Model):
     airportCode = models.CharField(max_length=3)
 
     def __str__(self):
-        return f"{self.id}: {self.city} ({self.airportCode})"
+        return f"{self.city} ({self.airportCode})"
 
 class Flight(models.Model):
     # origin = models.CharField(max_length=64)
@@ -18,17 +18,18 @@ class Flight(models.Model):
     #related name allows search in reverse direction (get all flights leaving from an origin)
     
     #destination = models.CharField(max_length=64)
-    destination = models.ForeignKey(Airport, on_delete=models.CASCADE, related_name="arrivals")
+    #models.PROTECT prevents deletion 
+    destination = models.ForeignKey(Airport, on_delete=models.PROTECT, related_name="arrivals")
     duration = models.SmallIntegerField()
 
     def __str__(self):
-        return f"{self.id}: {self.origin} to {self.destination}"
+        return f"{self.origin} to {self.destination}"
 
 class Passenger(models.Model):
     first = models.CharField(max_length=64)
     last = models.CharField(max_length=64)
 
     def __str__(self):
-        return f"{self.id}: {self.first} {self.last}"
+        return f"{self.first} {self.last}"
 
 # in db.sqlite3, these tables are stored as wingCo_airport, wingCo_flight, and wingCo_passenger

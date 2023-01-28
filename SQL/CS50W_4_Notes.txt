@@ -67,3 +67,6 @@ Table Names:
 wingCo_airport            
 wingCo_flight          
 wingCo_passenger 
+
+
+last viewed: 1:04:45 of Lecture 4 (1/23/23) - https://www.youtube.com/watch?v=YzP164YANAU

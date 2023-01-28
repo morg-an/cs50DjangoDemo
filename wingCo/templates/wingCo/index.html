@@ -1,0 +1,18 @@
+{% extends "wingCo/layout.html" %}
+
+{% block body%}
+<h1> Flights </h1>
+<ul>
+    {% for flight in flights %}
+        <li>Flight {{ flight.id }}: {{ flight.origin}} to {{flight.destination}} ({{flight.duration}} min)</li>
+    {% endfor %}
+</ul>
+
+<h1>Airports</h1>
+<ul>
+    {% for airport in airports%}
+        <li>Airport {{airport.id}}: {{airport.airportCode }} ({{ airport.city }})</li>
+    {% endfor %}
+</ul>
+
+{% endblock%}
