@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'isitmybirthday',
     'tasks',
     'wingCo',
+    'users',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

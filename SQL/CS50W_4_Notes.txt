@@ -90,4 +90,12 @@ step 3: edit admin.py to import objects, then
 
 step 4: to get to the admin app:
     python3 manage.py runserver
-    
+
+~~~~~~~~~~~~~~~~~Users~~~~~~~~~~~~~~~~~~~~~
+1. send username/pw via post request
+2. get the username/password from inside the post data
+        username = request.POST["username"]
+        password = request.POST["password"]
+3. in views.py, import django packages: 
+    from django.contrib.auth import authenticate, login, logout
+3. 
