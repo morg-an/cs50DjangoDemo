@@ -5,16 +5,16 @@
     <h1>Flight: {{ flight.origin }} to {{ flight.destination }}</h1>
     <ul>
         <li> Flight ID: &nbsp;&nbsp; {{ flight.id }}</li>
-        <li>Duration: &nbsp; {{ flight.duration }} min</li>
-        <li>Passegers:</li>
+        <li> Duration: &nbsp; {{ flight.duration }} min</li>
+        <li> Passegers:</li>
         <ul>
             {% for passenger in passengers%}
-            <li>Passengers: {{ passengers.first }}</li>
+            <li> Passengers: {{ passengers.first }}</li>
             {% empty %}
-            <li>This flight is currently empty.</li>
+            <li> This flight is currently empty.</li>
             {% endfor %}
         </ul>
 
     </ul>
-
+    <a href="{% url 'wingCo:index' %}">All Flights</a>
 {% endblock %}

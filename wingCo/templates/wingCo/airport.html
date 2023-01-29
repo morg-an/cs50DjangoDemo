@@ -1,0 +1,9 @@
+{% extends "wingCo/layout.html" %}
+
+{% block body%}
+
+<h1> {{airport.airportCode}} </h1>
+<h2> {{airport.city}} </h2>
+<a href="{% url 'wingCo:index' %}">Back</a>
+
+{% endblock %}

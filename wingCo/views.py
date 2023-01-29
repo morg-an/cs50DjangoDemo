@@ -18,3 +18,9 @@ def flight(request, flight_id):
         #flight.passengers works becuase of the related name in models.py
         "passengers": flight.passengers.all()
     })
+
+def airport(request, airport_id):
+    airport = Airport.objects.get(pk = airport_id)
+    return render(request, "wingCo/airport.html", {
+        "airport": airport,
+    })
