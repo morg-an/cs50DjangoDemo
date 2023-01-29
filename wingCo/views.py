@@ -1,4 +1,7 @@
 from django.shortcuts import render
+from django.http import HttpResponseRedirect
+# reverse takes the name of a view in urls.py and gets the path - helpful to avoid hardcoding urls
+from django.urls import reverse
 
 from .models import Flight, Airport, Passenger
 
@@ -24,3 +27,16 @@ def airport(request, airport_id):
     return render(request, "wingCo/airport.html", {
         "airport": airport,
     })
+
+def book(request, passenger_id):
+    passenger = Passenger.objects.get(pk = passenger_id)
+    if request.method == "POST":
+        flight = Flight.objects.get(pk=int(request.POST["flight"]))
+        passenger.flights.add(flight)
+        return HttpResponseRedirect(reverse("wingCo:flight", args=(flight.id,)))
+    elif request.method == 'GET':
+        flights = Flight.objects.all()
+        return render(request, "wingCo/book.html", {
+            "passenger": passenger,
+            "flights": flights        
+        })

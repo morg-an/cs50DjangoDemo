@@ -1,0 +1,20 @@
+{% extends "wingCo/layout.html" %}
+<!-- this template has access to passengers -->
+
+<!-- This form does not include error handling. 
+    As is, a passenger can be 'added' to a flight they are already on.-->
+{% block body %}
+
+<h1>Book a Flight</h1>
+<form action="{% url 'wingCo:book' passenger.id %}" method="POST">
+    {% csrf_token %}
+    <select name="flight">
+        {% for flight in flights %}
+        <option value="{{ flight.id }}">{{ flight }}</option>
+        {% endfor %}
+    </select>
+    <input type="submit">
+</form>
+<a href="{% url 'wingCo:index' %}">Back</a>
+
+{% endblock %}

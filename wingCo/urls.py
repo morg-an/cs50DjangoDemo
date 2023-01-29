@@ -5,5 +5,6 @@ app_name = "wingCo"
 urlpatterns = [
     path("", views.index, name="index"),
     path("<int:flight_id>", views.flight, name="flight"),
-    path("airport/<int:airport_id>", views.airport, name="airport")
+    path("airport/<int:airport_id>", views.airport, name="airport"),
+    path("book/<int:passenger_id>", views.book, name="book")
 ]
